@@ -1,0 +1,8 @@
+version: '3'
+services:
+  test:
+    build:
+      context: ..
+      dockerfile: test/Dockerfile.test
+    volumes:
+      - .:/app/test
