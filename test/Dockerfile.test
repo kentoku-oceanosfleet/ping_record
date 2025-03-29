@@ -12,10 +12,10 @@ ENV PATH="/opt/venv/bin:$PATH"
 COPY test/requirements.txt .
 RUN pip install -r requirements.txt
 
-COPY test/test_timestamp.py .
+COPY test/test.py .
 COPY get_timestamp.sh .
 RUN chmod +x get_timestamp.sh
 COPY get_ping.sh .
 RUN chmod +x get_ping.sh
 
-CMD ["python", "-m", "pytest", "test_timestamp.py", "-v"]
+CMD ["python", "-m", "pytest", "test.py", "-v"]
