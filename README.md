@@ -2,7 +2,7 @@
 
 ISO8601形式でタイムスタンプを取得するシンプルなツール
 
-## 使い方
+## get_timestamp.shの使い方
 
 ```bash
 ./get_timestamp.sh
@@ -12,6 +12,24 @@ ISO8601形式でタイムスタンプを取得するシンプルなツール
 ```
 2024-03-29T12:34:56+09:00
 ```
+
+## get_ping.shの使い方
+
+```bash
+./get_ping.sh <destination_ip>
+```
+
+実行すると、指定したIPアドレスに対して1回pingを実行し、以下のようなJSON形式で結果を出力します：
+```
+{'dst':'8.8.8.8','response_ms':20.1}
+```
+
+### パラメータ
+- destination_ip: ping送信先のIPアドレス（例：8.8.8.8）
+
+### 出力形式
+- dst: 宛先IPアドレス
+- response_ms: pingの応答時間（ミリ秒）
 
 ## テスト方法
 

@@ -1,0 +1,9 @@
+FROM debian:stable-slim
+
+RUN apt-get update && apt-get install -y iputils-ping && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+COPY get_ping.sh .
+RUN chmod +x get_ping.sh
+
+CMD ["./get_ping.sh"]
